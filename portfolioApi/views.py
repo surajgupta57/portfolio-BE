@@ -10,34 +10,34 @@ from django.views import View
 
 @api_view(['GET'])
 def get_jumbo(request):
-    intro_details = Jumbo.objects.all()
+    intro_details = Jumbo.objects.filter().order_by("weight")
     serializer = JumboSerializer(intro_details, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def get_works_todo(request):
-    details = ServicesOffred.objects.all()
+    details = ServicesOffred.objects.filter().order_by("weight")
     serializer = ServicesOffredSerializer(details, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def get_social_media(request):
-    details = SocialMediaLinks.objects.all()
+    details = SocialMediaLinks.objects.filter().order_by("weight")
     serializer = SocialMediaLinksSerializer(details, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def get_all_projects(request):
-    details = Project.objects.all()
+    details = Project.objects.filter().order_by("weight")
     serializer = ProjectSerializer(details, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def get_me(request):
-    details = AboutMeSection.objects.all()
+    details = AboutMeSection.objects.filter().order_by("weight")
     serializer = AboutMeSectionSerializer(details, many=True)
     return Response(serializer.data)
 
@@ -51,14 +51,14 @@ def get_contacted(request):
 
 @api_view(['GET'])
 def get_progress_bar(request):
-    details = SkillSection.objects.all()
+    details = SkillSection.objects.filter().order_by("weight")
     serializer = SkillSectionSerializer(details, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def get_technologies_icon(request):
-    details = LanguageIcons.objects.all()
+    details = LanguageIcons.objects.filter().order_by("weight")
     serializer = LanguageIconsSerializer(details, many=True)
     return Response(serializer.data)
 
