@@ -29,3 +29,5 @@ yarn-error.log*
 venv
 env
 .env
+static
+/static
