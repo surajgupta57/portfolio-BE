@@ -12,6 +12,7 @@ class JumboSerializer(serializers.ModelSerializer):
 
 
 class AboutMeSectionSerializer(serializers.ModelSerializer):
+    cv = serializers.CharField(source="cv.cv.url")
     class Meta:
         model = AboutMeSection
         fields = '__all__'
@@ -50,4 +51,10 @@ class SkillSectionSerializer(serializers.ModelSerializer):
 class LanguageIconsSerializer(serializers.ModelSerializer):
     class Meta:
         model = LanguageIcons
+        fields = '__all__'
+
+
+class TestimonialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Testimonial
         fields = '__all__'
